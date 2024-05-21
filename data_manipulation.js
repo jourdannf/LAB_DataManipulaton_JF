@@ -20,6 +20,8 @@ const isTwoOdd = (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2;
 // if ANY of the numbers is larger than 25.
 const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
 
+const isUnder25 = n1 < 25 || n2 < 25 || n3 < 25 || n4 < 25;
+
 // Check four: all unique numbers
 // This is long, and there are more efficient
 // ways of handling it with other data structures
@@ -31,6 +33,9 @@ const isDivisibleByFive = !(n1 % 5) && !(n2 % 5) && !(n3 % 5) && !(n4 % 5);
 
 //Check first number is larger than last
 const firstLargerThanLast = n1 > n4;
+
+//Arithmetic Chain
+const arithmeticChain = ((n3 * (n2 - n1))%n4);
 
 // Here, we put the results into a single variable 
 // for convenience. Note how we negate isOver25 using
