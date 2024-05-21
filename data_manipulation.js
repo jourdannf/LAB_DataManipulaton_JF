@@ -29,7 +29,8 @@ const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
 const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4;
 
 //Check all numbers are divisible by 5
-const isDivisibleByFive = !(n1 % 5) && !(n2 % 5) && !(n3 % 5) && !(n4 % 5);
+//%5 is 0 should all equal 0 if the number is divisible by 5
+const isDivisibleByFive = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) == 0;
 
 //Check first number is larger than last
 const firstLargerThanLast = n1 > n4;
@@ -41,10 +42,11 @@ const arithmeticChain = ((n3 * (n2 - n1))%n4);
 // for convenience. Note how we negate isOver25 using
 // the ! operator. We could also have tested for 
 // "isUnder25" as an alternative.
+// Rewrote this so the ! operator isn't included for isOver25
 const isValid = isSum50 && isTwoOdd && isUnique || isOver25;
 
 // Finally, log the results.
-console.log(isValid);
+console.log("The four numbers are " + isValid + "according to the following critera: the sum equals 50, at least two of them are odd, they're all unique.");
 
 // Here's another example of how this COULD be done,
 // but it SHOULD NOT be done this way. As programmers,
@@ -112,3 +114,7 @@ if (fuelEfficiency === 60){
  
     console.log("You will travel for " + totalDistance/fuelEfficiency + " hours.");
  }
+
+ //Traveling at 60 mph makes the most sense for this trip.
+ //as it will get you to your destination the fastest within
+ //the realm of your budget.
