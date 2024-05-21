@@ -31,12 +31,17 @@ const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 
 //Check all numbers are divisible by 5
 //%5 is 0 should all equal 0 if the number is divisible by 5
 const isDivisibleByFive = (n1 % 5) + (n2 % 5) + (n3 % 5) + (n4 % 5) == 0;
+console.log("It is " + isDivisibleByFive + " that all the numbers are divisible by five.");
 
 //Check first number is larger than last
 const firstLargerThanLast = n1 > n4;
+console.log("It is " + firstLargerThanLast + " that the first number is larger than the last.");
 
 //Arithmetic Chain
-const arithmeticChain = ((n3 * (n2 - n1))%n4);
+//Used - to subtract and * to multiple
+// % n4 should return whatever is left over after dividing by n4
+const arithmeticChain = ((n3 * (n2 - n1))% n4);
+console.log("The artithmetic chain resulted in a remainder of " + arithmeticChain + ".");
 
 // Here, we put the results into a single variable 
 // for convenience. Note how we negate isOver25 using
@@ -46,7 +51,7 @@ const arithmeticChain = ((n3 * (n2 - n1))%n4);
 const isValid = isSum50 && isTwoOdd && isUnique || isOver25;
 
 // Finally, log the results.
-console.log("The four numbers are " + isValid + "according to the following critera: the sum equals 50, at least two of them are odd, they're all unique.");
+console.log("It is " + isValid + " that the four numbers meet the following critera: the sum equals 50, at least two of them are odd, they're all unique.");
 
 // Here's another example of how this COULD be done,
 // but it SHOULD NOT be done this way. As programmers,
