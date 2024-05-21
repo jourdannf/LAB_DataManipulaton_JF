@@ -58,17 +58,57 @@ const dontDoThis = ((n1 + n2 + n3 + n4) == 50) &&
   let x = 10;
 
 
-  //PART TWO: Practical Math
+//PART TWO: Practical Math
 
-  const totalDistance = 1500;
-  let fuelEfficiency = 55;
+//Setting up variables all if statements will use
+const totalDistance = 1500;
+const budget = 175;
+const fuelPerGallon = 3;
+let fuelEfficiency = 55;
 
-  if (fuelEfficiency === 55){
+//How much fuel, the budget, and how long I'll travel for at fuel efficiency 55 mph
+if (fuelEfficiency === 55){
+   let gallons = totalDistance/30;
+    console.log("You will need " + gallons + " gallons of fuel.");
 
-  }else if (fuelEfficiency === 60){
+   let actualAmount = fuelPerGallon*gallons;
+   if (actualAmount <= budget){
+        console.log("The buget will cover travleing at 55 miles per hour");
+   }else{
+        console.log("The budget will not cover traveling at 55 miles per hour");
+   }
 
-  }else if (fuelEfficiency === 75){
-    
-  }else{
-    console.log("Your car cannot manuever at this rate");
-  }
+   console.log("You will travel for " + totalDistance/fuelEfficiency + " hours.");
+}
+
+//Repeated the same logic for other fuel efficiencies
+//Just replaced the numbers so that it'd match the prompt logically
+fuelEfficiency = 60;
+if (fuelEfficiency === 60){
+    let gallons = totalDistance/28;
+     console.log("You will need " + gallons + " gallons of fuel.");
+ 
+    let actualAmount = fuelPerGallon*gallons;
+    if (actualAmount <= budget){
+         console.log("The buget will cover travleing at 55 miles per hour");
+    }else{
+         console.log("The budget will not cover traveling at 55 miles per hour");
+    }
+ 
+    console.log("You will travel for " + totalDistance/fuelEfficiency + " hours.");
+ }
+
+ fuelEfficiency = 75;
+ if (fuelEfficiency === 75){
+    let gallons = totalDistance/23;
+     console.log("You will need " + gallons + " gallons of fuel.");
+ 
+    let actualAmount = fuelPerGallon*gallons;
+    if (actualAmount <= budget){
+         console.log("The buget will cover travleing at 55 miles per hour");
+    }else{
+         console.log("The budget will not cover traveling at 55 miles per hour");
+    }
+ 
+    console.log("You will travel for " + totalDistance/fuelEfficiency + " hours.");
+ }
