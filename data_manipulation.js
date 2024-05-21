@@ -29,13 +29,14 @@ const isUnique = n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 
 //Check all numbers are divisible by 5
 const isDivisibleByFive = !(n1 % 5) && !(n2 % 5) && !(n3 % 5) && !(n4 % 5);
 
-
+//Check first number is larger than last
+const firstLargerThanLast = n1 > n4;
 
 // Here, we put the results into a single variable 
 // for convenience. Note how we negate isOver25 using
 // the ! operator. We could also have tested for 
 // "isUnder25" as an alternative.
-const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique && isDivisibleByFive;
+const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique && isDivisibleByFive && firstLargerThanLast;
 
 // Finally, log the results.
 console.log(isValid);
